@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class SpaceComplexityDemo {
     // O(1) - Constant Space
+    // No additional data structures are used. Only a temporary variable is created.
     public static void swapElements(int a, int b) {
         System.out.println("Before Swap: a = " + a + ", b = " + b);
         int temp = a;
@@ -20,20 +21,21 @@ public class SpaceComplexityDemo {
         b = temp;
         System.out.println("After Swap: a = " + a + ", b = " + b);
     }
+
     // O(N) - Linear Space
+    // Duplicates the array, requiring additional space proportional to the array size -> O(N).
     public static int[] duplicateArray(int[] array) {
-        return Arrays.copyOf(array, array.length); // Duplicates the array
+        return Arrays.copyOf(array, array.length);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // O(1) Example
+        // O(1) - Example: Swapping two numbers
         System.out.println("Enter two numbers to swap:");
         int a = scanner.nextInt();
         int b = scanner.nextInt();
         swapElements(a, b);
 
-        // O(N) Example
+        // O(N) - Input array and duplicate it
         System.out.println("Enter the size of the array:");
         int n = scanner.nextInt();
         int[] array = new int[n];
